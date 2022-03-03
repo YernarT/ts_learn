@@ -6,7 +6,6 @@ import ScorePanel from './ScorePanel';
 export default class GameControl {
 	snake: Snake;
 	food: Food;
-
 	scorePanel: ScorePanel;
 
 	constructor() {
