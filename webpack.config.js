@@ -9,8 +9,10 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		filename: 'bundle.js',
+		// 提升兼容性
 		environment: {
 			arrowFunction: false,
+			const: false,
 		},
 	},
 	// Webpack 打包时要用的模块
