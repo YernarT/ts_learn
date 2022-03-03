@@ -6,7 +6,7 @@
 	"main": "main.ts",
 	"scripts": {
 		"build": "webpack",
-		"start": "webpack serve --open chrome.exe"
+		"start": "webpack serve --open"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.17.5",
