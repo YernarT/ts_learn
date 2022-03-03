@@ -1,5 +1,5 @@
 // 记分牌的类
-export default class ScroePanel {
+export default class ScorePanel {
 	// 记录分数和等级
 	score = 0;
 	level = 1;
