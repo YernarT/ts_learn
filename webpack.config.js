@@ -85,6 +85,11 @@ module.exports = {
 		}),
 	],
 
+	// 查找 ts 导入 ts
+	resolve: {
+		extensions: ['.ts', '...'],
+	},
+
 	// mode: 'development',
 	mode: 'production',
 };
