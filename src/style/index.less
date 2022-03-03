@@ -1,5 +1,35 @@
-body {
-	display: flex;
+@bg-color: #b7d4a8;
 
-	background-color: rgb(0, 255, 0);
+#main {
+	width: 360px;
+	height: 420px;
+
+	border: 10px solid #000;
+	border-radius: 10px;
+	background-color: @bg-color;
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+
+	#stage {
+		width: 304px;
+		height: 304px;
+
+		border: 2px solid #000;
+	}
+
+	#score-panel {
+		width: 300px;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 }
