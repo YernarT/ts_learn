@@ -21,8 +21,34 @@
 	#stage {
 		width: 304px;
 		height: 304px;
-
 		border: 2px solid #000;
+
+		position: relative;
+
+		#snake {
+			div {
+				width: 10px;
+				height: 10px;
+
+				border: 1px solid transparent;
+				background-color: #000;
+
+				// 开启绝对定位, 用于移动
+				position: absolute;
+			}
+		}
+
+		#food {
+			width: 10px;
+			height: 10px;
+
+			border: 1px solid transparent;
+			background-color: rgb(255, 0, 0);
+
+			position: absolute;
+			top: 40px;
+			left: 40px;
+		}
 	}
 
 	#score-panel {
