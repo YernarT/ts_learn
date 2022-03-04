@@ -10,6 +10,10 @@ export default class GameControl {
 
 	// 移动方向 (按键方向)
 	direction: string = '';
+	// 游戏暂停
+	isPause = false;
+	// 游戏结束
+	isDone = false;
 
 	constructor() {
 		this.snake = new Snake();
@@ -41,10 +45,11 @@ export default class GameControl {
 			case 'KeyD':
 				this.direction = e.code;
 				this.run();
+				break;
 
 			case 'Space':
-			default:
-			// pause()
+				this.isPause = !this.isPause;
+				break;
 		}
 	}
 
@@ -75,12 +80,38 @@ export default class GameControl {
 			case 'ArrowRight':
 			case 'Right':
 			case 'KeyD':
-			default:
 				x += 10;
 				break;
 		}
 
-		this.snake.x = x;
-		this.snake.y = y;
+		// 检测蛇 是否吃到食物
+		this.checkFoodWasEat();
+
+		try {
+			if (!this.isPause && !this.isDone) {
+				this.snake.x = x;
+				this.snake.y = y;
+			}
+		} catch (e) {
+			// 游戏结束
+			console.log(e);
+			this.isDone = true;
+		}
+
+		!this.isDone &&
+			!this.isPause &&
+			setTimeout(this.run.bind(this), 300 - (this.scorePanel.level - 1) * 30);
+	}
+
+	// 蛇吃食
+	checkFoodWasEat() {
+		if (this.snake.x === this.food.x && this.snake.y === this.food.y) {
+			// 重置食物位置
+			this.food.changePosition();
+			// 分数增加
+			this.scorePanel.addScore();
+			// 蛇 增加一节
+			this.snake.addBody();
+		}
 	}
 }
