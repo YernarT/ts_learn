@@ -29,12 +29,16 @@ export default class GameControl {
 		switch (e.code) {
 			case 'ArrowUp':
 			case 'Up':
+			case 'KeyW':
 			case 'ArrowDown':
 			case 'Down':
+			case 'KeyS':
 			case 'ArrowLeft':
 			case 'Left':
+			case 'KeyA':
 			case 'ArrowRight':
 			case 'Right':
+			case 'KeyD':
 				this.direction = e.code;
 				this.run();
 
@@ -52,21 +56,25 @@ export default class GameControl {
 		switch (this.direction) {
 			case 'ArrowUp':
 			case 'Up':
+			case 'KeyW':
 				y -= 10;
 				break;
 
 			case 'ArrowDown':
 			case 'Down':
+			case 'KeyS':
 				y += 10;
 				break;
 
 			case 'ArrowLeft':
 			case 'Left':
+			case 'KeyA':
 				x -= 10;
 				break;
 
 			case 'ArrowRight':
 			case 'Right':
+			case 'KeyD':
 			default:
 				x += 10;
 				break;
